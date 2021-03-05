@@ -1,0 +1,82 @@
+{
+  "private": true,
+  "name": "egg-microservice",
+  "version": "1.0.0",
+  "description": "基于eggjs的微服务框架",
+  "scripts": {
+    "stop": "egg-scripts stop",
+    "start:test": "egg-scripts start --env=test --port=7079",
+    "start:prod": "egg-scripts start --env=prod --port=7079",
+    "dev:local": "egg-bin dev --env=local --port=7079",
+    "dev:test": "egg-bin dev --env=test --port=7079",
+    "dev:prod": "egg-bin dev --env=prod --port=7079",
+    "doc:dev": "apidoc --input ./app/ --output ./docs/ --watch",
+    "doc:build": "apidoc --input ./app/controller/ --output ./docs/",
+    "doc:deploy": "npm run doc:build && deploy-action",
+    "debug": "egg-bin debug",
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "ci": "npm run lint && npm run cov",
+    "autod": "autod"
+  },
+  "egg": {
+    "declarations": true
+  },
+  "dependencies": {
+    "@cyber-library/request": "^2.0.0",
+    "arr-exclude": "^1.0.0",
+    "axios": "0.21.1",
+    "cookie": "0.4.1",
+    "cookie-parser": "1.4.5",
+    "deep-extend": "0.6.0",
+    "egg": "2.29.1",
+    "egg-cors": "2.2.3",
+    "egg-mysql": "3.0.0",
+    "egg-redis": "2.4.0",
+    "egg-scripts": "2.13.0",
+    "egg-socket.io": "4.1.6",
+    "form-data": "3.0.0",
+    "jsdom": "16.4.0",
+    "koa-cookie": "1.0.0",
+    "lodash": "4.17.20",
+    "module-alias": "2.2.2",
+    "moment": "2.29.1",
+    "moment-round": "1.0.1",
+    "node-notifier": "^9.0.0",
+    "query-string": "6.13.7",
+    "uuid": "8.3.2"
+  },
+  "devDependencies": {
+    "@yiyou/deploy-action": "^2.0.0",
+    "apidoc": "^0.26.0",
+    "autod": "3.0.1",
+    "autod-egg": "1.1.0",
+    "cross-env": "7.0.3",
+    "egg-bin": "4.15.0",
+    "egg-ci": "1.18.0",
+    "egg-mock": "3.25.1",
+    "eslint": "5.13.0",
+    "eslint-config-egg": "7.1.0",
+    "husky": "^4.3.0"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "eggScriptsConfig": {
+    "env": "production",
+    "sticky": true,
+    "daemon": true,
+    "title": "egg-server-pano-resource-server"
+  },
+  "ci": {
+    "version": "10"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "shicheng.yu",
+  "license": "MIT"
+}
