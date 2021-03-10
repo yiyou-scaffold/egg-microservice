@@ -1,6 +1,6 @@
 'use strict';
 const { Controller } = require('egg');
-const {name} =require("../../package.json");
+const {name} =require('../../package.json');
 
 class IndexPageController extends Controller {
   async index() {
