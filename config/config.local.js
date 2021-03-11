@@ -2,9 +2,10 @@
 
 console.log('开发环境=====>');
 
+const getCurrentServerDomain = require('@yiyou/server-host');
 const { request_config_extend } = require('@cyber-library/request');
 request_config_extend({
-  base_url: 'https://342688dj69.imdo.co/',
+  base_url: getCurrentServerDomain(),
 });
 
 exports.redis = {
