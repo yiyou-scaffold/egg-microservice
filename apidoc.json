@@ -1,8 +1,8 @@
 {
-  "name": "白板服务",
+  "name": "微服务",
   "version": "1.0.0",
-  "description": "白板服务node端接口",
-  "title": "白板服务",
-  "url": "http://test.yi-you.org:7070",
-  "sampleUrl": "http://test.yi-you.org:7070"
+  "description": "微服务接口文档",
+  "title": "微服务",
+  "url": ":7079",
+  "sampleUrl": ":7079"
 }
