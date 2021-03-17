@@ -15,7 +15,3 @@ exports.redis = {
     db: 0,
   },
 };
-
-exports.io = {
-
-};
