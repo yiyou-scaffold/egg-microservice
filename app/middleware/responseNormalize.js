@@ -8,13 +8,21 @@ module.exports = () => {
   return async (context, next) => {
     try {
       const returnValue = await next();
-      if (returnValue) {
-        context.body = { code: 0, status: 'succees', message: 'ok', data: returnValue };
-      } else {
-        context.body = { code: 0, status: 'succees', message: 'ok', data: null };
+      if (returnValue instanceof Buffer) {
+        context.response.status = 200;
+        context.response.body = returnValue;
+        return false;
       }
+      if (returnValue) {
+        context.response.status = 200;
+        context.response.body = { code: 0, status: 'succees', message: 'ok', data: returnValue };
+        return false;
+      }
+      context.response.status = context.status;
+      return false;
     } catch (error) {
-      context.body = { code: 10000, status: 'error', message: error.message, data: {} };
+      context.response.body = { code: 10000, status: 'error', message: error.message, data: {} };
+      return false;
     }
   };
 };
