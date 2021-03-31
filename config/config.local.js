@@ -2,7 +2,7 @@
 
 console.log('开发环境=====>');
 
-const getCurrentServerDomain = require('@yiyou/server-host');
+const getCurrentServerDomain = require('@yiyou/server-host').default;
 const { request_config_extend } = require('@cyber-library/request');
 request_config_extend({
   base_url: getCurrentServerDomain(),
