@@ -5,8 +5,10 @@
   "description": "基于eggjs的微服务框架",
   "scripts": {
     "stop": "egg-scripts stop",
-    "start:test": "egg-scripts stop && egg-scripts start --env=test --port=7079",
-    "start:prod": "egg-scripts stop && egg-scripts start --env=prod --port=7079",
+    "build:docker:test": "docker build -f dockerfile.test -t egg-microservice .",
+    "start:docker:test": "egg-scripts stop && egg-scripts start --env=docker_test --port=7079",
+    "build:docker:prod": "docker build -f dockerfile.prod -t egg-microservice .",
+    "start:docker:prod": "egg-scripts stop && egg-scripts start --env=docker_prod --port=7079",
     "dev:local": "egg-bin dev --env=local --port=7079",
     "dev:test": "egg-bin dev --env=test --port=7079",
     "dev:prod": "egg-bin dev --env=prod --port=7079",
@@ -68,8 +70,8 @@
   "eggScriptsConfig": {
     "env": "production",
     "sticky": true,
-    "daemon": true,
-    "title": "egg-server-pano-resource-server"
+    "daemon": false,
+    "title": "egg-microservice"
   },
   "ci": {
     "version": "10"
